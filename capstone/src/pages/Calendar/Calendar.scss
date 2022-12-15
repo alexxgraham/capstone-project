@@ -1,0 +1,56 @@
+@use '../../styles/colors' as *;
+
+.calendar-main {
+	padding: 2rem 1rem;
+	background-color: $gray-lighter;
+}
+
+.calendar {
+	border-top: 0.125rem solid $black;
+	border-left: 0.125rem solid $black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: stretch;
+	gap: 0;
+}
+
+.date {
+	font-size: 0.875rem;
+	font-weight: 500;
+	border-bottom: 0.125rem solid $black;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	line-height: 2.25rem;
+	text-align: center;
+	background-color: $white;
+
+	&-container {
+		display: inline-block;
+		background-color: $calendar-light-purple;
+		width: 100%;
+		border-bottom: 0.125rem solid $black;
+		border-right: 0.125rem solid $black;
+	}
+
+	&-entries {
+		width: 100%;
+		padding-bottom: 2rem;
+	}
+
+	&-entry {
+		width: fit-content;
+		padding-inline: 0.25rem;
+		padding-bottom: 0.25rem;
+		font-size: 0.625rem;
+		line-height: 0.95rem;
+	}
+}
+
+.entry-link {
+	display: flex;
+	width: 25%;
+
+	&:hover {
+		background-color: rgba($color: $light-purple, $alpha: 0.5);
+	}
+}
