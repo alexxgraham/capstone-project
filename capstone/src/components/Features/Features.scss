@@ -1,0 +1,73 @@
+@use '../../styles/breakpoints' as *;
+@use '../../styles/colors' as *;
+@use '../../styles/fonts' as *;
+
+.features {
+	flex-direction: column;
+	display: flex;
+	margin: 2rem;
+
+	&__header {
+		background-image: linear-gradient(to right, $light-purple, $purple);
+		text-align: center;
+		padding: 0.75rem 0;
+		color: $white;
+	}
+
+	&__body {
+		background-color: $white;
+		text-align: center;
+
+		@include tablet {
+			display: flex;
+			justify-content: space-evenly;
+			padding: 2rem 1rem;
+		}
+	}
+
+	&__phase {
+		border: 1px solid $black;
+		border-radius: 0.375rem;
+		margin: 1rem 2rem;
+		padding: 0.5rem 0;
+
+		@include tablet {
+			width: 30%;
+			margin: 2rem 0;
+			padding: 1rem 0;
+		}
+	}
+
+	&__title {
+		text-decoration: underline;
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+
+	&__list {
+		padding: 1rem;
+		text-align: left;
+	}
+
+	&__item {
+		font-size: 0.875rem;
+		font-weight: 400;
+
+		&--highlight {
+			font-weight: 800;
+		}
+
+		&--todo {
+			padding-top: 1rem;
+			font-weight: 600;
+		}
+	}
+
+	@include tablet {
+		margin: 4rem;
+	}
+
+	@include desktop {
+		margin: 8rem;
+	}
+}

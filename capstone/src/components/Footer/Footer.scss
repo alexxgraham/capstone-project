@@ -1,0 +1,32 @@
+@use '../../styles/breakpoints' as *;
+@use '../../styles/colors' as *;
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: linear-gradient(to bottom right, $light-purple, $purple);
+	color: $white;
+	text-align: center;
+	padding-top: 1.25rem;
+	padding-bottom: 2rem;
+	width: 100%;
+
+	@include desktop {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.exit {
+	margin-top: 1.5rem;
+	width: 50%;
+	text-align: center;
+	border-radius: 0.3125rem;
+	border: 0.0625rem solid $white;
+	background-image: linear-gradient(to top right, $purple, $black);
+	padding: 0.25rem;
+	font-size: 0.875rem;
+	line-height: 2rem;
+	color: $light-purple;
+}
