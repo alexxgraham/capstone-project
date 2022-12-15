@@ -1,0 +1,70 @@
+@use '../../styles/colors' as *;
+
+.medications-main {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.medications {
+	&__link {
+		width: 100%;
+		background-color: $white;
+		border: 0.125rem solid $light-purple;
+		border-radius: 1.25rem;
+		padding: 1rem;
+		margin-bottom: 1.5625rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	&__data {
+		width: 50%;
+		font-size: 1.375rem;
+		line-height: 1.75rem;
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__generic-text {
+		width: 100%;
+	}
+
+	&__generic {
+		display: flex;
+	}
+
+	&__info {
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		width: 50%;
+		font-size: 0.625rem;
+	}
+
+	&__frequency-text {
+		width: 95%;
+	}
+
+	&__use-text {
+		margin-top: 0.5rem;
+		display: flex;
+		justify-content: center;
+		width: 50%;
+		padding: 0.25rem;
+		border: 0.0625rem solid $gray-mid-dark;
+		border-radius: 0.25rem;
+	}
+
+	&__rx-text {
+		margin-top: 0.25rem;
+		width: 95%;
+		color: $gray-mid-dark;
+		text-transform: uppercase;
+		font-size: 0.6875rem;
+	}
+}
