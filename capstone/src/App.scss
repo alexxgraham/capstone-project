@@ -1,0 +1,54 @@
+@use './styles/colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+a,
+button,
+label,
+input,
+select,
+textarea,
+::placeholder {
+	-webkit-tap-highlight-color: transparent;
+	background-color: unset;
+	text-decoration: none;
+	color: inherit;
+	font: inherit;
+	border: none;
+}
+
+html {
+	overflow-x: none;
+}
+
+body {
+	font-family: 'round';
+	background-color: $gray-lighter;
+}
+
+.body {
+	background-color: $white;
+}
+
+p {
+	width: 65ch;
+}
+
+.load-me {
+	font-size: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(to right, $light-purple, $white);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
