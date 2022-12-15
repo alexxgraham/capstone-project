@@ -1,0 +1,180 @@
+@use '../../styles/colors' as *;
+
+.header {
+	&__home-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__home-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__calendar-buttons {
+		gap: 1rem;
+		display: flex;
+		align-items: center;
+	}
+
+	&__medication-buttons {
+		gap: 1rem;
+		display: flex;
+		align-items: center;
+	}
+
+	&__demo-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__button {
+		text-align: center;
+		font-size: 0.75rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0.3125rem;
+		color: $white;
+		background-color: $dark-purple;
+		width: text;
+		padding-inline: 1.5rem;
+		height: 2.25rem;
+
+		&-home {
+			font-family: 'Courier New', Courier, monospace;
+			border: 0.125rem solid $gray-lighter;
+			background-color: $light-purple;
+			color: white;
+			justify-content: center;
+			align-items: center;
+			font-size: 0.9375rem;
+			border-radius: 0.3125rem;
+			font-weight: 600;
+			height: 2.1875rem;
+			width: 2.1875rem;
+			display: flex;
+		}
+
+		&-demo {
+			background-color: $white;
+			padding: 0.75rem 1.75rem;
+			border-radius: 0.75rem;
+			font-size: 1.125rem;
+			line-height: 1.25rem;
+			color: $light-purple;
+		}
+	}
+}
+
+.header-icon {
+	height: 1.25rem;
+}
+
+#icon {
+	&-calendar::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/home_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		right: 0.65rem;
+	}
+
+	&-addnewentry::after {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/note_add_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		left: 0.65rem;
+	}
+
+	&-addentry::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/calendar_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		padding-right: 1.75rem;
+	}
+
+	&-medications::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/home_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		right: 0.65rem;
+	}
+
+	&-addnewmed::after {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/add_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		left: 0.65rem;
+	}
+
+	&-medication::after {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/medical_services_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		left: 0.65rem;
+	}
+
+	&-editmed::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/edit_note_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		position: relative;
+		right: 0.65rem;
+	}
+
+	&-addmed::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/medical_services_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		padding-right: 1.75rem;
+	}
+
+	&-settings::before {
+		display: block;
+		content: ' ';
+		background-image: url('../../assets/icons/light/arrow_back_white.svg');
+		background-size: 1.25rem 1.25rem;
+		background-repeat: no-repeat;
+		height: 1.25rem;
+		width: 1.25rem;
+		padding-right: 1.75rem;
+	}
+}
