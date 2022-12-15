@@ -1,0 +1,66 @@
+@use '../../styles/colors' as *;
+
+.edit-med-main {
+	padding: 2rem 2rem 4rem;
+	background-color: $gray-lighter;
+}
+
+.edit-med {
+	background-color: $white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem 0;
+	border: 0.125rem solid $light-purple;
+	border-radius: 0.625rem;
+
+	&__form {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem 0;
+
+		&-section {
+			display: flex;
+			flex-direction: column;
+			width: 90%;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__label {
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+		width: 100%;
+	}
+
+	&__input {
+		height: 2.1875rem;
+		font-size: 0.875rem;
+		padding: 0.75rem;
+		width: 100%;
+		border: 0.125rem solid $black;
+		border-radius: 0.625rem;
+	}
+
+	&__button {
+		width: 90%;
+		height: 2.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $light-purple;
+		border: 0.125rem solid $black;
+		border-radius: 0.3125rem;
+
+		&-cancel {
+			margin-top: 0.75rem;
+			background-color: $purple;
+		}
+	}
+}
+
+::placeholder {
+	color: $gray-mid-light;
+}
