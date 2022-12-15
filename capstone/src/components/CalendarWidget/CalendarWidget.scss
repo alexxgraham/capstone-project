@@ -1,0 +1,53 @@
+@use '../../styles/colors' as *;
+
+.calendar-widget {
+	margin: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		justify-content: center;
+		text-shadow: 0.3125rem 0.3125rem 0.9375rem $black;
+		padding-bottom: 2rem;
+		font-size: 1.5rem;
+		display: flex;
+	}
+
+	&__body {
+		border-bottom: 0.125rem solid $black;
+		border-right: 0.125rem solid $black;
+		border-left: 0.125rem solid $black;
+	}
+
+	&__link {
+		display: flex;
+		&:hover {
+			background-color: rgba($color: $light-purple, $alpha: 0.5);
+		}
+	}
+
+	&__weekday {
+		width: 100%;
+		&-date {
+			border-bottom: 0.125rem solid $black;
+			border-top: 0.125rem solid $black;
+			background-color: $white;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.125rem;
+			height: 3.125rem;
+			display: flex;
+			width: 100%;
+		}
+	}
+
+	&__entries {
+		background-color: $calendar-light-purple;
+		font-size: 0.8125rem;
+		padding: 1rem 0.5rem;
+	}
+
+	&__entry {
+		width: fit-content;
+	}
+}
