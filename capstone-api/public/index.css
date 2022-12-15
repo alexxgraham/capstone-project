@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial;
+}
+
+.documentation {
+	flex-direction: column;
+	display: flex;
+}
+
+header {
+	border-bottom: 0.125rem solid black;
+	text-align: center;
+	padding: 1rem;
+	width: 100%;
+}
+
+h1 {
+	font-weight: 800;
+	margin-bottom: 1rem;
+	font-size: 2rem;
+}
+
+h3 {
+	font-weight: 800;
+	font-size: 1rem;
+}
+
+main {
+	padding: 2rem;
+}
+
+section {
+	padding-bottom: 1rem;
+}
+
+h5 {
+	line-height: 2rem;
+	font-size: 1rem;
+}
+
+h6 {
+	font-weight: 400;
+	line-height: 1.5rem;
+	font-size: 0.875rem;
+}
+
+a {
+	padding-top: 0.25rem;
+	display: block;
+	font-size: 0.75rem;
+	color: blue;
+}
+
+:visited {
+	color: orange;
+}
+
+article {
+	margin: 1rem;
+	padding: 0.5rem;
+	border: 0.125rem solid black;
+	border-radius: 0.3125rem;
+}
+
+div {
+	padding: 0 1rem;
+}
+
+p {
+	font-size: 0.75rem;
+	line-height: 1.1rem;
+}

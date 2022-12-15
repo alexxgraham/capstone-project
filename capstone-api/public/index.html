@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Medicine Cabinet (API)</title>
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body class="documentation">
+		<header>
+			<h1 class="header">Medicine Cabinet</h1>
+			<h3 class="subheader">API Documentation</h3>
+		</header>
+		<main>
+			<section>
+				<h4>Endpoints</h4>
+				<a href="/">/index.html</a>
+				<a href="#medications">/medications</a>
+				<a href="#medRx">/medications/:rx</a>
+				<a href="#calendar">/calendar</a>
+				<a href="#date">/calendar/:date</a>
+			</section>
+			<section>
+				<h4>Endpoint Examples</h4>
+				<article>
+					<h5 id="medications">/medications</h5>
+					<p>[</p>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"rx": "Acetaminophen",</p>
+							<p>"generic": "Tylenol",</p>
+							<p>"dosage": "325mg",</p>
+							<p>"frequency": "325mg",</p>
+							<p>"times": null,</p>
+							<p>"quantity": 100,</p>
+							<p>"use": "Pain Reliever",</p>
+							<p>"why": "Relieve Pain or Reduce Fever",</p>
+							<p>"description": "Acetaminophen is used to treat mild to moderate pain, moderate to severe pain in conjunction with opiates, or to reduce fever. Common conditions treated include headache, muscle aches, arthritis, backache, toothaches, sore throat, colds, flu, and fevers.",</p>
+							<p>"side": "Stomach Pain (Upper Right Side), Loss of Appetite, Tiredness, Itching, Dark Urine, Clay-Colored Stools, or Jaundice",</p>
+							<p>"serious": "Severe Skin Reaction, Ongoing Headache, Nausea, Vomiting, Redness, Swelling, if your symptoms get worse, or if you have any new symptoms",</p>
+							<p>"major": 7,</p>
+							<p>"moderate": 65,</p>
+							<p>"mild": 35,</p>
+							<p>"interactions": "https://www.drugs.com/drug-interactions/acetaminophen.html"</p>
+						</div>
+						<p>},</p>
+					</div>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"rx": "Amphetamine",</p>
+							<p>"generic": "Adderall",</p>
+							<p>"dosage": "5mg",</p>
+							<p>"frequency": "5mg",</p>
+							<p>"times": "8:00,23:00",</p>
+							<p>"quantity": 30,</p>
+							<p>"use": "Central Nervous System Stimulant",</p>
+							<p>"why": "Treat ADHD",</p>
+							<p>"description": "Adderall is used to treat attention deficit hyperactivity disorder (ADHD) and narcolepsy. Adderall contains a combination of amphetamine and dextroamphetamine.",</p>
+							<p>"side": "Stomach Pain, Loss of Appetite, Weight Loss, Mood Changes, Feeling Nervous, Fast Heart Rate, Headache, Dizziness, Sleep Problems, or Dry Mouth",</p>
+							<p>"serious": "Chest Pain, Trouble Breathing, Hallucinations, Aggression, Hostility, Paranoia, Seizures, Tics (Muscle twitches), or Changes in your Vision",</p>
+							<p>"major": 36,</p>
+							<p>"moderate": 135,</p>
+							<p>"minor": 9,</p>
+							<p>"interactions": "https://www.drugs.com/drug-interactions/amphetamine-dextroamphetamine,adderall.html"</p>
+						</div>
+						<p>},...</p>
+					</div>
+					<p>]</p>
+				</article>
+				<article>
+					<h5 id="medRx">/medications/:medRx</h5>
+					<h6>Ex: Acetaminophen</h6>
+					<p>[</p>
+					<p>{</p>
+					<div>
+						<p>"rx": "Acetaminophen",</p>
+						<p>"generic": "Tylenol",</p>
+						<p>"dosage": "325mg",</p>
+						<p>"frequency": "325mg",</p>
+						<p>"times": null,</p>
+						<p>"quantity": 100,</p>
+						<p>"use": "Pain Reliever",</p>
+						<p>"why": "Relieve Pain or Reduce Fever",</p>
+						<p>"description": "Acetaminophen is used to treat mild to moderate pain, moderate to severe pain in conjunction with opiates, or to reduce fever. Common conditions treated include headache, muscle aches, arthritis, backache, toothaches, sore throat, colds, flu, and fevers.",</p>
+						<p>"side": "Stomach Pain (Upper Right Side), Loss of Appetite, Tiredness, Itching, Dark Urine, Clay-Colored Stools, or Jaundice",</p>
+						<p>"serious": "Severe Skin Reaction, Ongoing Headache, Nausea, Vomiting, Redness, Swelling, if your symptoms get worse, or if you have any new symptoms",</p>
+						<p>"major": 7,</p>
+						<p>"moderate": 65,</p>
+						<p>"mild": 35,</p>
+						<p>"interactions": "https://www.drugs.com/drug-interactions/acetaminophen.html"</p>
+					</div>
+					<p>}</p>
+					<p>]</p>
+				</article>
+				<article>
+					<h5 id="calendar">/entries</h5>
+					<p>[</p>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "11-30-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall"</p>
+						</div>
+						<p>},</p>
+					</div>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "12-1-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall"</p>
+						</div>
+						<p>},</p>
+					</div>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "12-2-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall"</p>
+						</div>
+						<p>},</p>
+					</div>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "12-3-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall"</p>
+						</div>
+						<p>},</p>
+					</div>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "12-4-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall"</p>
+						</div>
+						<p>},...</p>
+					</div>
+					<p>]</p>
+				</article>
+				<article>
+					<h5 id="date">/entries/:date</h5>
+					<h6>Ex: 12-5-2022</h6>
+					<p>[</p>
+					<div>
+						<p>{</p>
+						<div>
+							<p>"date": "12-5-2022",</p>
+							<p>"note": "Took Adderall,Took Melatonin,Took Adderall,Updated Adderall"</p>
+						</div>
+						<p>}</p>
+					</div>
+					<p>]</p>
+				</article>
+			</section>
+		</main>
+	</body>
+</html>
