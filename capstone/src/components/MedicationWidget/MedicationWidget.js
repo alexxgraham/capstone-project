@@ -34,6 +34,7 @@ function MedicationWidget() {
 					</Link>
 				))}
 			</div>
+			<Link to='/add/medications' className='new-med__link'>Add New Medication</Link>
 		</div>
 	)
 }

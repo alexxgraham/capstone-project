@@ -4,12 +4,9 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import './AddMedication.scss'
 
-function AddMedication({ setMedications }) {
+function AddMedication() {
 	const API_URL = process.env.REACT_APP_API_URL
 	const navigate = useNavigate()
-	const refreshPage = () => {
-		window.location.reload()
-	}
 	const handleNewMedication = (e) => {
 		e.preventDefault()
 		const newMedication = {
@@ -19,12 +16,8 @@ function AddMedication({ setMedications }) {
 			quantity: e.target.quantity.value,
 		}
 		axios.post(API_URL + '/medications/', newMedication).then(
-			axios.get(API_URL + '/medications/' + newMedication.rx).then((response) => {
-				setMedications(response.data)
-			})
+			navigate('/medications/' + newMedication.rx)
 		)
-		navigate('/medications/' + newMedication.rx)
-		refreshPage()
 	}
 	return (
 		<>

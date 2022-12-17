@@ -8,14 +8,11 @@
 	background-image: linear-gradient(to bottom right, $light-purple, $purple);
 	color: $white;
 	text-align: center;
+	position: sticky;
+	bottom: 0;
 	padding-top: 1.25rem;
 	padding-bottom: 2rem;
 	width: 100%;
-
-	@include desktop {
-		position: absolute;
-		bottom: 0;
-	}
 }
 
 .exit {

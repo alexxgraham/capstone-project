@@ -41,7 +41,11 @@ function Medication() {
 		<>
 			<Header page={currentMedication.rx} medication={true} />
 			<main className='medication-main'>
-				<h2 className='medication__generic-title'>{currentMedication.generic}</h2>
+				<h2 className='medication__title'>{currentMedication.generic}</h2>
+				<section className='medication__quantity'>
+					<h4>Quantity</h4>
+					<h2>{currentMedication.quantity}</h2>
+				</section>
 				<section className='medication'>
 					<p className='medication__text'>
 						Use {currentMedication.frequency} to {currentMedication.why}
@@ -58,6 +62,9 @@ function Medication() {
 						<p className='medication__text medication__interaction'>{currentMedication.major} Serious Interactions</p>
 						<p className='medication__text medication__interaction'>{currentMedication.moderate} Moderate Interactions</p>
 						<p className='medication__text medication__interaction'>{currentMedication.minor} Minor Interactions</p>
+						<a className='medication__text medication__interaction--link' href={currentMedication.interactions}>
+							Please click here to see more information about possible interactions with this medication.
+						</a>
 					</article>
 					<article>
 						<p className='medication__header medication__text'>Drug Information:</p>

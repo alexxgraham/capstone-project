@@ -58,11 +58,50 @@ function CalendarWidget() {
 	}, [API_URL])
 	useEffect(() => {
 		axios.get(API_URL + '/entries').then((response) => {
-			const entries = response.data
-			setEntryData(entries)
+			const entriesData = response.data
+			entriesData.forEach((entry) => {
+				const note = entry.note.split(',')
+				const [month, day] = entry.date.split('-')
+				if (month === '1') {
+					entriesData.push({ date: `Jan ${Number(day)}`, note: note })
+				}
+				if (month === '2') {
+					entriesData.push({ date: `Feb ${Number(day)}`, note: note })
+				}
+				if (month === '3') {
+					entriesData.push({ date: `Mar ${Number(day)}`, note: note })
+				}
+				if (month === '4') {
+					entriesData.push({ date: `Apr ${Number(day)}`, note: note })
+				}
+				if (month === '5') {
+					entriesData.push({ date: `May ${Number(day)}`, note: note })
+				}
+				if (month === '6') {
+					entriesData.push({ date: `Jun ${Number(day)}`, note: note })
+				}
+				if (month === '7') {
+					entriesData.push({ date: `Jul ${Number(day)}`, note: note })
+				}
+				if (month === '8') {
+					entriesData.push({ date: `Aug ${Number(day)}`, note: note })
+				}
+				if (month === '9') {
+					entriesData.push({ date: `Sep ${Number(day)}`, note: note })
+				}
+				if (month === '10') {
+					entriesData.push({ date: `Oct ${Number(day)}`, note: note })
+				}
+				if (month === '11') {
+					entriesData.push({ date: `Nov ${Number(day)}`, note: note })
+				}
+				if (month === '12') {
+					entriesData.push({ date: `Dec ${Number(day)}`, note: note })
+				}
+			})
+			setEntryData(entriesData)
 		})
 	}, [API_URL])
-	console.log('? Entry Data: ', entryData)
 	if (!medicationTimes) {
 		return <div className='load-me'>Loading...</div>
 	} else {
@@ -77,18 +116,12 @@ function CalendarWidget() {
 							<section key={i} className='calendar-widget__weekday'>
 								<div className='calendar-widget__weekday-date'>{dateFormat(date)}</div>
 								<article className='calendar-widget__entries'>
-									{i === 0 ? <p className='calendar-widget__entry'>Took Adderall</p> : ''}
-									{i === 0 ? <p className='calendar-widget__entry'>Took Adderall</p> : ''}
-									{i === 0 ? <p className='calendar-widget__entry'>Took Melatonin</p> : ''}
-									{isYesterday(date) ? <p className='calendar-widget__entry'>Took Prilosec</p> : ''}
-									{isYesterday(date) ? <p className='calendar-widget__entry'>Took Adderall</p> : ''}
-									{isYesterday(date) ? <p className='calendar-widget__entry'>Took Adderall</p> : ''}
-									{isYesterday(date) ? <p className='calendar-widget__entry'>Took Melatonin</p> : ''}
-									{isToday(date) ? <p className='calendar-widget__entry'>Took Adderall</p> : ''}
-									{isToday(date) ? <p className='calendar-widget__entry'>Take Adderall</p> : ''}
-									{isToday(date) ? <p className='calendar-widget__entry'>Take Melatonin</p> : ''}
+								{entryData.map((entry) => (entry.date === format(date, 'MMM d') ? <div key={date} className='widget-entries'>{entry.note.map((note) => (
+											<p className='calendar-widget__entry'>{note}</p>
+										))}</div> : ''))}
+									{isToday(date) ? <Link className='new-entry__link' to='/add/calendar'>Add new entry</Link> : ''}
 									{isTomorrow(date) ? medicationTimes.map((medicationTime) => <p className='calendar-widget__entry'>Take {medicationTime.name}</p>) : ''}
-									{i === 4 ? medicationTimes.map((medicationTime) => <p className='calendar-widget__entry'>Take {medicationTime.name}</p>) : ''}
+									{i === medicationTimes.length +1 ? medicationTimes.map((medicationTime) => <p className='calendar-widget__entry'>Take {medicationTime.name}</p>) : ''}
 								</article>
 							</section>
 						</Link>

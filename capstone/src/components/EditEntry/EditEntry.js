@@ -70,7 +70,7 @@ function EditEntry() {
 						<Link
 							onClick={(e) => {
 								e.preventDefault()
-								navigate('/calendar')
+								navigate(-1)
 							}}
 							className='edit-entry__button edit-entry__button-cancel'>
 							Cancel

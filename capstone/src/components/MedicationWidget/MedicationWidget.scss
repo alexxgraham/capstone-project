@@ -64,3 +64,13 @@
 		}
 	}
 }
+
+.new-med__link {
+	display: flex;
+	justify-content: center;
+	background-color: $white;
+	border: .125rem solid $light-purple;
+	border-radius: 1rem;
+	padding: .5rem 0;
+	margin-inline: 2rem;
+}

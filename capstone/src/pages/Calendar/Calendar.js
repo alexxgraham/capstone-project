@@ -20,7 +20,7 @@ const dateFormat = (date) => {
 	if (isTomorrow(date)) {
 		return 'Tomorrow'
 	}
-	return format(date, 'MMM do')
+	return format(date, 'MMM d')
 }
 function Calendar() {
 	const API_URL = process.env.REACT_APP_API_URL
@@ -62,12 +62,51 @@ function Calendar() {
 	}, [API_URL])
 	useEffect(() => {
 		axios.get(API_URL + '/entries').then((response) => {
-			const entries = response.data
-			setEntryData(entries)
+			const entriesData = response.data
+			entriesData.forEach((entry) => {
+				const note = entry.note.split(',')
+				const [month, day] = entry.date.split('-')
+				if (month === '1') {
+					entriesData.push({ date: `Jan ${Number(day)}`, note: note })
+				}
+				if (month === '2') {
+					entriesData.push({ date: `Feb ${Number(day)}`, note: note })
+				}
+				if (month === '3') {
+					entriesData.push({ date: `Mar ${Number(day)}`, note: note })
+				}
+				if (month === '4') {
+					entriesData.push({ date: `Apr ${Number(day)}`, note: note })
+				}
+				if (month === '5') {
+					entriesData.push({ date: `May ${Number(day)}`, note: note })
+				}
+				if (month === '6') {
+					entriesData.push({ date: `Jun ${Number(day)}`, note: note })
+				}
+				if (month === '7') {
+					entriesData.push({ date: `Jul ${Number(day)}`, note: note })
+				}
+				if (month === '8') {
+					entriesData.push({ date: `Aug ${Number(day)}`, note: note })
+				}
+				if (month === '9') {
+					entriesData.push({ date: `Sep ${Number(day)}`, note: note })
+				}
+				if (month === '10') {
+					entriesData.push({ date: `Oct ${Number(day)}`, note: note })
+				}
+				if (month === '11') {
+					entriesData.push({ date: `Nov ${Number(day)}`, note: note })
+				}
+				if (month === '12') {
+					entriesData.push({ date: `Dec ${Number(day)}`, note: note })
+				}
+			})
+			setEntryData(entriesData)
 		})
 	}, [API_URL])
-	console.log('? Entry Data: ', entryData)
-	if (!medicationTimes) {
+	if ((!medicationTimes, !entryData)) {
 		return <div className='load-me'>Loading...</div>
 	} else {
 		return (
@@ -75,21 +114,21 @@ function Calendar() {
 				<Header page={todayTitle} calendar={true} />
 				<main className='calendar-main'>
 					<section className='calendar'>
-						{calendar.map((date, i) => (
-							<Link className='entry-link' to={'/calendar/' + (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear()}>
-								<article key={date} className={'date-container' + (isToday(date) ? ' date-container__today' : '')}>
+						{calendar.map((date) => (
+							<Link key={date} className='entry-link' to={'/calendar/' + (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear()}>
+								<article id={format(date, 'MMMd')} className={'date-container' + (isYesterday(date) ? ' yesterdays-entries' : '') + (isToday(date) ? ' todays-entries' : '') + (isTomorrow(date) ? ' tomorrows-entries' : '')}>
 									<h3 className='date'>{dateFormat(date)}</h3>
 									<div className='date-entries'>
-										{isYesterday(date) ? <p className='date-entry'>Took Prilosec</p> : ''}
-										{i === 0 ? <p className='date-entry'>Updated Melatonin</p> : ''}
-										{i < 18 ? <p className='date-entry'>Took Addderall</p> : ''}
-										{i < 18 ? <p className='date-entry'>Took Addderall</p> : ''}
-										{i < 18 ? <p className='date-entry'>Took Melatonin</p> : ''}
-										{i === 10 ? <p className='date-entry'>Updated Adderall</p> : ''}
-										{isToday(date) ? <p className='date-entry'>Take Adderall</p> : ''}
-										{isToday(date) ? <p className='date-entry'>Take Adderall</p> : ''}
-										{isToday(date) ? <p className='date-entry'>Take Melatonin</p> : ''}
-										{isTomorrow(date) ? medicationTimes.map((medicationTime) => <p className='date-entry'>Take {medicationTime.name}</p>) : ''}
+										{entryData.map((entry) => (entry.date === format(date, 'MMM d') ? <div key={date} className='calendar-entries'>{entry.note.map((note) => (
+											<p className='date-entry'>{note}</p>
+										))}</div> : ''))}
+										{isTomorrow(date)
+											? medicationTimes.map((medicationTime, i) => (
+													<p key={i} className='date-entry'>
+														Take {medicationTime.name}
+													</p>
+											  ))
+											: ''}
 									</div>
 								</article>
 							</Link>

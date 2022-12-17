@@ -7,22 +7,15 @@ import axios from 'axios'
 function AddEntry({ setEntries }) {
 	const API_URL = process.env.REACT_APP_API_URL
 	const navigate = useNavigate()
-	const refreshPage = () => {
-		window.location.reload()
-	}
 	const handleNewEntry = (e) => {
 		e.preventDefault()
 		const newEntry = {
 			date: e.target.date.value,
 			note: e.target.note.value,
 		}
-		axios.post(API_URL + '/entries/' + newEntry.date, newEntry).then(
-			axios.get(API_URL + '/entries/' + newEntry.date).then((response) => {
-				setEntries(response.data)
-			})
-		)
-		navigate('/calendar/' + newEntry.date)
-		refreshPage()
+		axios.post(API_URL + '/entries/' + newEntry.date, newEntry).then(() => {
+			navigate('/calendar/' + newEntry.date)
+		})
 	}
 	return (
 		<>
