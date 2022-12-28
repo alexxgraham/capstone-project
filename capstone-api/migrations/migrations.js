@@ -18,7 +18,8 @@ exports.up = function (knex) {
 			table.string('interactions')
 		})
 		.createTable('entries', (table) => {
-			table.string('date').primary()
+			table.increments('id').primary()
+			table.string('date').notNullable()
 			table.string('note').notNullable()
 		})
 }
